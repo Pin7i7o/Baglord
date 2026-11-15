@@ -27,9 +27,10 @@ func _update_score(points: int) -> void:
 		score+= points
 
 func _spawn_sprite(sprite_path: String) -> void:
-	var new_monster_instance = spawned_monster_scene.instantiate() as Sprite2D
+	var new_monster_instance = spawned_monster_scene.instantiate()
 
-	new_monster_instance.texture = load(sprite_path)
+	new_monster_instance.get_child(1).texture = load(sprite_path)
+	
 	new_monster_instance.global_position = Vector2(randf_range(832, 1152), randf_range(64, 320))
 	new_monster_instance.rotation_degrees = randi() % 361
 	new_monster_instance.speed = randf_range(150, 300)

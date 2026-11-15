@@ -58,10 +58,10 @@ func _change_monster_settings() -> void:
 
 func _set_new_timer() -> float:
 	match type_of_monster:
-		TYPE_OF_MONSTER.ZOMBIE: return 2.5
-		TYPE_OF_MONSTER.MUMMY: return 2.0
+		TYPE_OF_MONSTER.ZOMBIE: return 2.0
+		TYPE_OF_MONSTER.MUMMY: return 1.5
 		TYPE_OF_MONSTER.SKELETON: return 1.0
-		TYPE_OF_MONSTER.HUMAN: return 3.0
+		TYPE_OF_MONSTER.HUMAN: return 2.5
 		_: return 0.0
 
 func _on_timer_timeout() -> void:

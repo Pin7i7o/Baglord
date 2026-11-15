@@ -1,6 +1,14 @@
 [gd_scene format=3 uid="uid://b3ijgxje2v28r"]
 
-[ext_resource type="Script" uid="uid://cdy05im526s8o" path="res://Scipts/spawned_monster.gd" id="1_6xgiw"]
+[ext_resource type="Script" uid="uid://cdy05im526s8o" path="res://Scripts/spawned_monster.gd" id="1_6xgiw"]
 
-[node name="Sprite2D" type="Sprite2D" unique_id=847937858]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6xgiw"]
+size = Vector2(64, 64)
+
+[node name="Area2D" type="Area2D" unique_id=29472854]
 script = ExtResource("1_6xgiw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1106897018]
+shape = SubResource("RectangleShape2D_6xgiw")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=450676499]
