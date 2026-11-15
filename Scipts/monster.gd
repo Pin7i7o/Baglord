@@ -1,5 +1,7 @@
 extends Node2D
 
+signal update_score
+
 @onready var sprite_2d: Sprite2D = $Sprite2D
 @onready var collision_shape_2d: CollisionShape2D = $CollisionShape2D
 @onready var timer: Timer = $Timer
@@ -27,12 +29,8 @@ var monster_points = {
 var type_of_monster: TYPE_OF_MONSTER = TYPE_OF_MONSTER.ZOMBIE
 var movement_height: int = 64
 var can_hit: bool = false
-var initial_position: Vector2 = Vector2.ZERO
-var sprite_node_positon_tween: Tween
-
 
 func _ready() -> void:
-	initial_position = global_position
 	_change_monster_settings()
 	randomize()
 
@@ -59,10 +57,10 @@ func _change_monster_settings() -> void:
 
 func _set_new_timer() -> float:
 	match type_of_monster:
-		TYPE_OF_MONSTER.ZOMBIE: return 2.0
-		TYPE_OF_MONSTER.MUMMY: return 1.5
+		TYPE_OF_MONSTER.ZOMBIE: return 2.5
+		TYPE_OF_MONSTER.MUMMY: return 2.0
 		TYPE_OF_MONSTER.SKELETON: return 1.0
-		TYPE_OF_MONSTER.HUMAN: return 2.0
+		TYPE_OF_MONSTER.HUMAN: return 3.0
 		_: return 0.0
 
 func _on_timer_timeout() -> void:
@@ -75,6 +73,7 @@ func _on_timer_timeout() -> void:
 
 func _on_input_event(_viewport: Node, event: InputEvent, _shape_idx: int) -> void:
 	if event.is_action_released("click") and can_hit:
+		update_score.emit(monster_points.get(type_of_monster))
 		can_hit = false
 		_movement(Vector2.DOWN, true, true)
 
