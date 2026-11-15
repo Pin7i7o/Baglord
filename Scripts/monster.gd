@@ -18,7 +18,7 @@ var monster_points = {
 	GlobalVariables.TYPE_OF_MONSTER.ZOMBIE: 50,
 	GlobalVariables.TYPE_OF_MONSTER.MUMMY: 200,
 	GlobalVariables.TYPE_OF_MONSTER.SKELETON: 500,
-	GlobalVariables.TYPE_OF_MONSTER.HUMAN: -250,
+	GlobalVariables.TYPE_OF_MONSTER.HUMAN: -500,
 }
 
 var type_of_monster: GlobalVariables.TYPE_OF_MONSTER = GlobalVariables.TYPE_OF_MONSTER.ZOMBIE
