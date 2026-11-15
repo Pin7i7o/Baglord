@@ -1,6 +1,7 @@
 extends Node2D
 
-signal update_score
+signal update_score_signal
+signal spawn_sprite_signal
 
 @onready var sprite_2d: Sprite2D = $Sprite2D
 @onready var collision_shape_2d: CollisionShape2D = $CollisionShape2D
@@ -73,7 +74,8 @@ func _on_timer_timeout() -> void:
 
 func _on_input_event(_viewport: Node, event: InputEvent, _shape_idx: int) -> void:
 	if event.is_action_released("click") and can_hit:
-		update_score.emit(monster_points.get(type_of_monster))
+		update_score_signal.emit(monster_points.get(type_of_monster))
+		spawn_sprite_signal.emit(monster_sprite_path.get(type_of_monster))
 		can_hit = false
 		_movement(Vector2.DOWN, true, true)
 

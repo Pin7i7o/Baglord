@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://b3ijgxje2v28r"]
+
+[ext_resource type="Script" uid="uid://cdy05im526s8o" path="res://Scipts/spawned_monster.gd" id="1_6xgiw"]
+
+[node name="Sprite2D" type="Sprite2D" unique_id=847937858]
+script = ExtResource("1_6xgiw")
