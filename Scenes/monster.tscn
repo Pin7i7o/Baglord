@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://ho7ni3oxkwpj"]
 
 [ext_resource type="Script" uid="uid://barsxtgbljm32" path="res://Scripts/monster.gd" id="1_0xhjo"]
+[ext_resource type="AudioStream" uid="uid://d2obhxi10y3vd" path="res://Assets/Audio/hit.wav" id="2_i44lo"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5qihg"]
 size = Vector2(64, 64)
@@ -16,6 +17,10 @@ shape = SubResource("RectangleShape2D_5qihg")
 debug_color = Color(0.41528746, 0.60461366, 0.0856015, 0.41960785)
 
 [node name="Timer" type="Timer" parent="." unique_id=553629934]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=92540698]
+stream = ExtResource("2_i44lo")
+volume_db = -40.0
 
 [connection signal="input_event" from="." to="." method="_on_input_event"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

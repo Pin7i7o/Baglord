@@ -1,0 +1,17 @@
+extends Node
+
+enum TYPE_OF_MONSTER {
+	ZOMBIE,
+	MUMMY,
+	SKELETON,
+	HUMAN
+}
+
+var score: int = 0
+
+var monster_deaths = {
+	TYPE_OF_MONSTER.ZOMBIE: 0,
+	TYPE_OF_MONSTER.MUMMY: 0,
+	TYPE_OF_MONSTER.SKELETON: 0,
+	TYPE_OF_MONSTER.HUMAN: 0
+}

@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://ctdh7h7km0ad2" path="res://Scripts/kill_plane.gd" id="1_6dp8r"]
 [ext_resource type="Texture2D" uid="uid://cs2f4wta5kngi" path="res://Assets/Monsters/baglord_sprite_sheet.png" id="1_dk67c"]
+[ext_resource type="AudioStream" uid="uid://b6k3xvtiyb3ei" path="res://Assets/Audio/baglord_munch.mp3" id="3_mnrtf"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6dp8r"]
 atlas = ExtResource("1_dk67c")
@@ -53,11 +54,16 @@ size = Vector2(372, 84)
 script = ExtResource("1_6dp8r")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1394220633]
+texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_5qihg")
 animation = &"eat"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1306941808]
-position = Vector2(2, -94)
+position = Vector2(0, -72)
 shape = SubResource("RectangleShape2D_dk67c")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1869215857]
+stream = ExtResource("3_mnrtf")
+volume_db = -30.0
 
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]

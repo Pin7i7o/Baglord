@@ -1,23 +1,12 @@
 [gd_scene format=3 uid="uid://0pggaavhrlae"]
 
 [ext_resource type="Script" uid="uid://2tm33ku25v6y" path="res://Scripts/main_menu.gd" id="1_28flt"]
+[ext_resource type="AudioStream" uid="uid://c8yw1naq784ij" path="res://Assets/Audio/the_mountain-spooky-scary-130009.mp3" id="2_48xlc"]
 
 [node name="MainMenu" type="Control" unique_id=330634006]
 layout_mode = 3
 anchors_preset = 0
 script = ExtResource("1_28flt")
-
-[node name="ColorRect" type="ColorRect" parent="." unique_id=1293919416]
-layout_mode = 0
-offset_right = 640.0
-offset_bottom = 720.0
-
-[node name="ColorRect2" type="ColorRect" parent="." unique_id=2100066341]
-layout_mode = 0
-offset_left = 640.0
-offset_right = 1280.0
-offset_bottom = 720.0
-color = Color(0, 0, 0, 1)
 
 [node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=274134056]
 layout_mode = 0
@@ -26,7 +15,7 @@ offset_right = 1280.0
 offset_bottom = 353.0
 theme_override_font_sizes/normal_font_size = 82
 bbcode_enabled = true
-text = "[color=fbf236]BAGLORD[/color]"
+text = "[color=fbf236]BAG[color=44240a]L[/color]ORD[/color]"
 fit_content = true
 scroll_active = false
 horizontal_alignment = 1
@@ -39,8 +28,12 @@ offset_right = 1280.0
 offset_bottom = 423.0
 theme_override_font_sizes/normal_font_size = 40
 bbcode_enabled = true
-text = "[pulse freq=1.0 color=#ffffff40 ease=-2.0][color=44240a]	press [ENTER] to start	[/color][/pulse]"
+text = "[pulse freq=1.0 color=#ffffff40 ease=-2.0][color=ffffffff]	press [ENTER] to start	[/color][/pulse]"
 fit_content = true
 scroll_active = false
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1834276516]
+stream = ExtResource("2_48xlc")
+volume_db = -40.0

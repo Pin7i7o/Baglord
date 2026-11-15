@@ -1,0 +1,129 @@
+[gd_scene format=3 uid="uid://botkei5jayjrr"]
+
+[ext_resource type="Script" uid="uid://boom6e5c07edb" path="res://Scripts/game_over.gd" id="1_14u15"]
+[ext_resource type="Texture2D" uid="uid://c7txgrmi7g6hb" path="res://Assets/Monsters/zombie.png" id="2_ek8ke"]
+[ext_resource type="LabelSettings" uid="uid://dpn0dvrxuetpm" path="res://Assets/game_over_label_settings.tres" id="2_j3ryr"]
+[ext_resource type="Texture2D" uid="uid://bo8uscyijy7rq" path="res://Assets/Monsters/mummy.png" id="3_eoghk"]
+[ext_resource type="Texture2D" uid="uid://cf83njlr6fu4t" path="res://Assets/Monsters/skeleton.png" id="4_14u15"]
+[ext_resource type="Texture2D" uid="uid://cpjm55qxurpbn" path="res://Assets/Monsters/human.png" id="5_j3ryr"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5qihg"]
+bg_color = Color(0.26666668, 0.14117648, 0.039215688, 1)
+border_width_left = 8
+border_width_top = 8
+border_width_right = 8
+border_width_bottom = 8
+border_color = Color(1, 1, 1, 1)
+
+[node name="GameOver" type="CanvasLayer" unique_id=633731831]
+process_mode = 3
+script = ExtResource("1_14u15")
+
+[node name="ColorRect" type="Panel" parent="." unique_id=1773519839]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -192.0
+offset_top = -224.0
+offset_right = 192.0
+offset_bottom = 224.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/panel = SubResource("StyleBoxFlat_5qihg")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ColorRect" unique_id=1024559664]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 41.0
+offset_top = 40.0
+offset_right = -42.0
+offset_bottom = -97.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="Score" type="Label" parent="ColorRect/VBoxContainer" unique_id=2015913849]
+texture_filter = 1
+layout_mode = 2
+label_settings = ExtResource("2_j3ryr")
+horizontal_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ColorRect/VBoxContainer" unique_id=954682200]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="TextureRect" type="TextureRect" parent="ColorRect/VBoxContainer/HBoxContainer" unique_id=1763031083]
+texture_filter = 1
+layout_mode = 2
+texture = ExtResource("2_ek8ke")
+
+[node name="ZombieLabel" type="Label" parent="ColorRect/VBoxContainer/HBoxContainer" unique_id=1142155294]
+layout_mode = 2
+size_flags_horizontal = 0
+label_settings = ExtResource("2_j3ryr")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="ColorRect/VBoxContainer" unique_id=521983488]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="TextureRect" type="TextureRect" parent="ColorRect/VBoxContainer/HBoxContainer2" unique_id=320338498]
+texture_filter = 1
+layout_mode = 2
+texture = ExtResource("3_eoghk")
+
+[node name="MummyLabel" type="Label" parent="ColorRect/VBoxContainer/HBoxContainer2" unique_id=1269034293]
+layout_mode = 2
+label_settings = ExtResource("2_j3ryr")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="ColorRect/VBoxContainer" unique_id=1845278234]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="TextureRect" type="TextureRect" parent="ColorRect/VBoxContainer/HBoxContainer3" unique_id=991154411]
+texture_filter = 1
+layout_mode = 2
+texture = ExtResource("4_14u15")
+
+[node name="SkeletonLabel" type="Label" parent="ColorRect/VBoxContainer/HBoxContainer3" unique_id=979041654]
+layout_mode = 2
+label_settings = ExtResource("2_j3ryr")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer4" type="HBoxContainer" parent="ColorRect/VBoxContainer" unique_id=240453343]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="TextureRect" type="TextureRect" parent="ColorRect/VBoxContainer/HBoxContainer4" unique_id=1358033065]
+texture_filter = 1
+layout_mode = 2
+texture = ExtResource("5_j3ryr")
+
+[node name="HumanLabel" type="Label" parent="ColorRect/VBoxContainer/HBoxContainer4" unique_id=633952656]
+layout_mode = 2
+label_settings = ExtResource("2_j3ryr")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="." unique_id=200366613]
+offset_left = 445.0
+offset_top = 513.0
+offset_right = 830.0
+offset_bottom = 568.0
+theme_override_font_sizes/normal_font_size = 28
+bbcode_enabled = true
+text = "[pulse freq=1.0 color=#ffffff40 ease=-2.0][color=fbf236]	press [ENTER] to restart	[/color][/pulse]"
+fit_content = true
+scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 1
