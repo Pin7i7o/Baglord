@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://ho7ni3oxkwpj"]
+
+[ext_resource type="Script" uid="uid://barsxtgbljm32" path="res://Scipts/monster.gd" id="1_0xhjo"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5qihg"]
+size = Vector2(77, 80.5)
+
+[node name="Monster" type="Area2D" unique_id=2056801401]
+script = ExtResource("1_0xhjo")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=398982042]
+shape = SubResource("RectangleShape2D_5qihg")
+debug_color = Color(0.41528746, 0.60461366, 0.0856015, 0.41960785)
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=305059446]
+position = Vector2(-1, 0)
