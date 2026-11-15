@@ -6,8 +6,8 @@ extends Node2D
 @onready var timer_label: Label = $TimerLabel
 @onready var score_label: Label = $ScoreLabel
 
-var spawned_monster_scene = preload("res://Scenes/spawned_monster.tscn")
-var game_over_scene = preload("res://Scenes/game_over.tscn")
+var spawned_monster_scene:PackedScene  = preload("res://Scenes/spawned_monster.tscn")
+var game_over_scene:PackedScene  = preload("res://Scenes/game_over.tscn")
 
 func _ready() -> void:
 	for monster in monsters.get_children():

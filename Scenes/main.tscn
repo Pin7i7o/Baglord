@@ -100,7 +100,7 @@ label_settings = ExtResource("4_kry3j")
 position = Vector2(1016, 544)
 
 [node name="Timer" type="Timer" parent="." unique_id=32621943]
-wait_time = 10.0
+wait_time = 60.0
 one_shot = true
 autostart = true
 

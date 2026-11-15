@@ -15,3 +15,9 @@ var monster_deaths = {
 	TYPE_OF_MONSTER.SKELETON: 0,
 	TYPE_OF_MONSTER.HUMAN: 0
 }
+
+
+func _reset_scores() -> void:
+	score = 0
+	for monster in monster_deaths:
+		monster_deaths[monster] = 0

@@ -17,6 +17,7 @@ func _ready() -> void:
 
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("start_game"):
+		GlobalVariables._reset_scores()
 		get_tree().paused = false
 		get_tree().reload_current_scene()
 		queue_free()

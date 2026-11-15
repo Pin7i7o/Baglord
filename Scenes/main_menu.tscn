@@ -37,3 +37,12 @@ vertical_alignment = 1
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1834276516]
 stream = ExtResource("2_48xlc")
 volume_db = -40.0
+autoplay = true
+
+[node name="Timer" type="Timer" parent="." unique_id=250567414]
+wait_time = 0.3
+autostart = true
+
+[node name="Sprites" type="Node2D" parent="." unique_id=1536617104]
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
